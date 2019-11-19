@@ -133,10 +133,15 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
         for(HashMap<String, String> row : allJobs) {
-            String value = row.toString();
-            if(value.toLowerCase().contains(term.toLowerCase())){
+//            String value = row.toString();
+            for(String value : row.keySet()){
+
+                if(value.toLowerCase().contains(term.toLowerCase())){
                 jobs.add(row);
+                break;
+
             }
+            //break;
         }
         return jobs;
     }
